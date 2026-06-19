@@ -1,7 +1,9 @@
+/* eslint-disable react-refresh/only-export-components */
+
 import { useMemo, useState } from 'react'
 import { createFileRoute } from '@tanstack/react-router'
 import { EventCard } from '../../components/EventCard/EventCard'
-import { initialEvents } from '../../data/initialEvents'
+import { useEvents } from '../../hooks/useEvents'
 import type { EventCategory, EventStatus } from '../../types/event'
 
 const categories: Array<EventCategory | 'all'> = [
@@ -28,15 +30,16 @@ export const Route = createFileRoute('/events/')({
   component: EventsIndexRoute,
 })
 
-export default function EventsIndexRoute() {
+function EventsIndexRoute() {
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedCategory, setSelectedCategory] = useState<string>('all')
   const [selectedStatus, setSelectedStatus] = useState<string>('all')
+  const { events } = useEvents()
 
   const filteredEvents = useMemo(() => {
     const normalizedSearch = searchTerm.trim().toLowerCase()
 
-    return initialEvents.filter((event) => {
+    return events.filter((event) => {
       const matchesSearch =
         normalizedSearch.length === 0 ||
         [event.title, event.description, event.location]
@@ -52,7 +55,7 @@ export default function EventsIndexRoute() {
 
       return matchesSearch && matchesCategory && matchesStatus
     })
-  }, [searchTerm, selectedCategory, selectedStatus])
+  }, [events, searchTerm, selectedCategory, selectedStatus])
 
   return (
     <section>

@@ -42,6 +42,19 @@ export function EventCard({ event }: EventCardProps) {
         </div>
       </dl>
 
+      {/* Progress Bar */}
+      <div style={{ width: '100%', backgroundColor: 'rgba(255, 212, 71, 0.24)', borderRadius: '4px', height: '6px', overflow: 'hidden' }}>
+        <div
+          style={{
+            width: `${(event.attendees.length / event.maxAttendees) * 100}%`,
+            backgroundColor: event.attendees.length >= event.maxAttendees ? 'var(--danger)' : (event.attendees.length / event.maxAttendees) > 0.5 ? 'var(--accent-hover)' : 'var(--success)',
+            height: '100%',
+            borderRadius: '4px',
+            transition: 'width 0.3s ease',
+          }}
+        ></div>
+      </div>
+
       <Link
         className={styles.link}
         to="/events/$eventId"
