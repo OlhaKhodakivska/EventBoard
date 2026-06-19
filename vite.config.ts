@@ -6,7 +6,7 @@ import { TanStackRouterVite } from '@tanstack/router-vite-plugin'
 export default defineConfig({
   plugins: [
     react(),
-    TanStackRouterVite(), // Додаємо цей плагін
+    TanStackRouterVite(), // Add this plugin
   ],
-  base: '/EventBoard/', // КРИТИЧНО ДЛЯ GITHUB PAGES (назва твого репозиторію)
+  base: '/EventBoard/', // Critical for GitHub Pages (your repository name)
 })

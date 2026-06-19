@@ -1,0 +1,108 @@
+.dashboard {
+	display: grid;
+	gap: 1.5rem;
+	color: #e2e8f0;
+}
+
+.header {
+	display: grid;
+	gap: 0.4rem;
+}
+
+.title {
+	margin: 0;
+	font-size: clamp(2rem, 4vw, 3rem);
+	line-height: 1.1;
+	color: #f8fafc;
+}
+
+.subtitle {
+	margin: 0;
+	color: #cbd5e1;
+	line-height: 1.6;
+}
+
+.statsGrid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+	gap: 1rem;
+}
+
+.statCard,
+.section {
+	padding: 1.25rem;
+	border: 1px solid rgba(148, 163, 184, 0.18);
+	border-radius: 1rem;
+	background: rgba(15, 23, 42, 0.92);
+	box-shadow: 0 10px 30px rgba(15, 23, 42, 0.18);
+}
+
+.statCard {
+	display: grid;
+	gap: 0.4rem;
+}
+
+.statLabel {
+	font-size: 0.8rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	color: #94a3b8;
+}
+
+.statValue {
+	font-size: 2rem;
+	line-height: 1;
+	color: #f8fafc;
+}
+
+.section {
+	display: grid;
+	gap: 1rem;
+}
+
+.sectionHeader {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1rem;
+	flex-wrap: wrap;
+}
+
+.sectionTitle {
+	margin: 0;
+	font-size: 1.25rem;
+	color: #f8fafc;
+}
+
+.sectionLink {
+	display: inline-flex;
+	padding: 0.7rem 1rem;
+	border-radius: 0.85rem;
+	background: #2563eb;
+	color: #fff;
+	font-weight: 700;
+	text-decoration: none;
+	transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.sectionLink:hover {
+	background: #1d4ed8;
+	transform: translateY(-1px);
+}
+
+.eventsList {
+	display: grid;
+	gap: 1rem;
+}
+
+.eventWrap {
+	display: grid;
+	gap: 0.65rem;
+}
+
+.eventDate {
+	margin: 0;
+	font-size: 0.9rem;
+	color: #94a3b8;
+}
